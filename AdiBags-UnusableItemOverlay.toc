@@ -1,0 +1,10 @@
+## Interface: 11302
+
+## Title: AdiBags-UnusableItemOverlay
+## Author: apottere
+## Version: 1.0
+
+## Dependencies: AdiBags
+
+ScanningTooltip.xml
+AdiBags-UnusableItemOverlay.lua
