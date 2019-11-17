@@ -7,15 +7,20 @@ local mod = addon:NewModule("UnusableItemOverlay", 'ABEvent-1.0')
 mod.uiName = L['Unusable Item Overlay']
 mod.uiDesc = L["Adds a red overlay to items that are unusable for you (by searching for red text in the tooltip)"]
 
+local enabled = false
+
 function mod:OnInitialize()
 end
 
 function mod:OnEnable()
+    enabled = true
 	self:RegisterMessage('AdiBags_UpdateButton', 'UpdateButton')
 	self:SendMessage('AdiBags_UpdateAllButtons')
 end
 
 function mod:OnDisable()
+    enabled = false
+	self:SendMessage('AdiBags_UpdateAllButtons')
 end
 
 function mod:GetOptions()
@@ -24,7 +29,7 @@ end
 function mod:UpdateButton(event, button)
     local texture = button.UnusableInidicatorTexture
 
-    if mod:ScanTooltipOfBagItemForRedText(button.bag, button.slot) then
+    if enabled and mod:ScanTooltipOfBagItemForRedText(button.bag, button.slot) then
         if not texture then
             texture = button:CreateTexture(nil,"OVERLAY")
             texture:SetPoint("TOPLEFT", 1, -1)
