@@ -27,21 +27,17 @@ function mod:GetOptions()
 end
 
 function mod:UpdateButton(event, button)
-    local texture = button.UnusableInidicatorTexture
+    local vertexColor = button.UnusableInidicatorVertexColorModified
 
     if enabled and mod:ScanTooltipOfBagItemForRedText(button.bag, button.slot) then
-        if not texture then
-            texture = button:CreateTexture(nil,"OVERLAY")
-            texture:SetPoint("TOPLEFT", 1, -1)
-            texture:SetPoint("BOTTOMRIGHT", -1, 1)
-            texture:SetColorTexture(1, 0, 0, 0.5)
-            button.UnusableInidicatorTexture = texture
-        else
-            texture:SetAlpha(1)
+        if not vertexColor then
+            button.UnusableInidicatorVertexColor = true
+            button.icon:SetVertexColor(1, 0.1, 0.1)
         end
     else
-        if texture then
-            texture:SetAlpha(0)
+        if vertexColor then
+            button.UnusableInidicatorVertexColor = false
+            button.icon:SetVertexColor(1, 1, 1)
         end
     end
 end
