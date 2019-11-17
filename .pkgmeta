@@ -1,4 +1,4 @@
-package-as: UnusableItemOverlay
+package-as: AdiBags-UnusableItemOverlay
 
 required-dependencies:
   - adibags
