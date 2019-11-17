@@ -2,7 +2,8 @@
 
 ## Title: AdiBags-UnusableItemOverlay
 ## Author: apottere
-## Version: 1.0
+## Version: @project-version@
+## X-Date: @project-date-iso@
 
 ## Dependencies: AdiBags
 
