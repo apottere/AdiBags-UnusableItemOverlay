@@ -1,6 +1,6 @@
 ## Interface: 11302
 
-## Title: AdiBags-UnusableItemOverlay
+## Title: AdiBags - UnusableItemOverlay
 ## Author: apottere
 ## Version: @project-version@
 ## X-Date: @project-date-iso@
