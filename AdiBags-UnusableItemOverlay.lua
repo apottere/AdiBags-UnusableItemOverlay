@@ -4,7 +4,7 @@ local addon = LibStub('AceAddon-3.0'):GetAddon('AdiBags')
 local L = setmetatable({}, {__index = addon.L})
 
 local mod = addon:NewModule("UnusableItemOverlay", 'ABEvent-1.0')
-mod.uiName = L['Unusable Item Overlay']
+mod.uiName = L['Unusable item overlay']
 mod.uiDesc = L["Adds a red overlay to items that are unusable for you (by searching for red text in the tooltip)"]
 
 local enabled = false
